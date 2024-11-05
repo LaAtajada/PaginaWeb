@@ -1,10 +1,4 @@
-/*
 
-TemplateMo 585 Barber Shop
-
-https://templatemo.com/tm-585-barber-shop
-
-*/
 
 
 /*---------------------------------------
@@ -12,15 +6,15 @@ https://templatemo.com/tm-585-barber-shop
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #d6a354;
-  --secondary-color:              #c12828;
+  --primary-color:                #f39c1f;
+  --secondary-color:              #001F54;
   --section-bg-color:             #f0f8ff;
-  --custom-btn-bg-color:          #c12828;
-  --custom-btn-bg-hover-color:    #FDBB2D;
+  --custom-btn-bg-color:          #001F54;
+  --custom-btn-bg-hover-color:    #f39c1f;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #7fffd4;
-  --link-hover-color:             #B22727;
+  --link-hover-color:             #001F54;
 
   --body-font-family:             'Unbounded', cursive;
 
