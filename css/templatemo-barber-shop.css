@@ -586,14 +586,14 @@ strong {
 }
 
 .contact-block-wrap {
-  background: var(--primary-color);
+  background: var(--secondary-color);
   border-radius: var(--border-radius-medium);
   padding: 0;
   min-height: 200px;
 }
 
 .contact-block {
-  background: var(--secondary-color);
+  background: var(--primary-color);
   border-radius: var(--border-radius-medium);
   transform: rotate(8deg);
   height: 100%;
