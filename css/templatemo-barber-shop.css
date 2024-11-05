@@ -605,7 +605,7 @@ strong {
 }
 
 .contact-block .custom-icon {
-  background: var(--primary-color);
+  background: var(--secondary-color);
   border-radius: var(--border-radius-large);
   display: block;
   width: 50px;
