@@ -421,6 +421,15 @@ strong {
   color: var(--secondary-color);
 }
 
+/* Estilo para las imágenes */
+.profile-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
 .about-section .custom-block-bg-overlay-image {
   width: 100%;
   max-height: 250px;
