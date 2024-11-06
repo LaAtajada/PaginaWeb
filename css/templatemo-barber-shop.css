@@ -420,7 +420,12 @@ strong {
 .about-section h6 {
   color: var(--secondary-color);
 }
-
+.col-md-5{
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
 /* Estilo para las imágenes */
 .profile-img {
   max-width: 100%;
