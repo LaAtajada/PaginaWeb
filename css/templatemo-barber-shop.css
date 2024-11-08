@@ -345,7 +345,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: url('../images/Fondo Inicio.png');
+  
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -457,7 +457,7 @@ strong {
   FEATURED               
 -----------------------------------------*/
 .featured-section {
-  background-image: url('../images/barber-customer-giving-high-five.jpg');
+  
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
