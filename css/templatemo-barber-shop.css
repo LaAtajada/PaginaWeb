@@ -487,7 +487,7 @@ strong {
 .services-thumb {
   border-radius: var(--border-radius-medium);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .services-thumb:hover .services-info {
