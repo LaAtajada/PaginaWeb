@@ -500,7 +500,7 @@ strong {
 }
 
 .services-image {
-  border-radius: var(--border-radius-medium);
+  /*border-radius: var(--border-radius-medium);*/
   display: block;
   margin: auto;
   transition: all 0.3s;
