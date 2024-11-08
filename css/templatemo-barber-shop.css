@@ -366,13 +366,13 @@ strong {
 
 .hero-section::after {
   content: "";
-  background: linear-gradient(90deg, #f39c1f 0%, #FFFFFF 100%);
+  background: linear-gradient(90deg, #f39c1f 0%, #f39c1f 100%);
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.60;
+  /*Transpariencia opacity: 0.60;*/
 }
 
 .hero-section .container {
