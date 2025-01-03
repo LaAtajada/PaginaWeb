@@ -153,6 +153,8 @@ strong {
   font-size: var(--h2-font-size);
 }
 
+.border-dashed { --bs-border-style: dashed; }
+
 
 /*---------------------------------------
   CUSTOM BLOCK BACKGROUND OVERLAY               
