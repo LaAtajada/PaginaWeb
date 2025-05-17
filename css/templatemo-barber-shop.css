@@ -223,6 +223,28 @@ strong {
 /*---------------------------------------
   NAVIGATION              
 -----------------------------------------*/
+
+.navbar .nav-link {
+  font-size: 16px;
+  padding: 6px 12px;
+  color: #000;
+  font-weight: 600;
+}
+
+.navbar .nav-link:hover {
+  color: #f39c1f;
+}
+
+.navbar .btn-main {
+  background-color: #f39c1f;
+  color: black;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 18px;
+}
+
+
+
 .sidebar {
   background: var(--primary-color);
   background-repeat: no-repeat;
@@ -366,16 +388,7 @@ strong {
   }
 }
 
-.hero-section::after {
-  content: "";
-  background: linear-gradient(90deg, #f39c1f 0%, #f39c1f 100%);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  /*Transpariencia opacity: 0.60;*/
-}
+
 
 .hero-section .container {
   position: relative;
