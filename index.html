@@ -1,466 +1,269 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrenamiento de Porteros en Guatemala | La Atajada</title>
+  <meta name="description" content="Líderes en entrenamiento de porteros en Guatemala. Clases personalizadas, tecnología, reportes y evolución garantizada.">
 
-        <meta name="description" content="En La Atajada, transformamos porteros en profesionales. Ofrecemos entrenamiento especializado, seguimiento con reportes personalizados y una metodología única para academias, clubes y porteros independientes. ¡Lleva tu portería al siguiente nivel!">
-        <meta name="author" content="Horacio Caniz">
 
-        <!-- Open Graph meta tags -->
-        <meta property="og:title" content="La Atajada - Servicio de Preparación de Porteros">
-        <meta property="og:description" content="Dedicado a academias o personas individuales." />
-        <meta property="og:image" content="https://la-atajada.com/images/Logos/Logo1200x630.png" />
-        <meta property="og:url" content="https://la-atajada.com" />
-        <meta property="og:type" content="website"/>  
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap-icons.css" media="print" onload="this.media='all'">
+  <link href="css/templatemo-barber-shop.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="icon" href="images/Logo sin fondo.png" type="image/png">
 
-        <title>La Atajada - Web Oficial</title>
+  <style>
+    .hero-section {
+        background-image: url('images/hero-bg.jpeg') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        z-index: 1;
+    }
+      @media screen and (max-width: 768px) {
+    h1.display-4 {
+      font-size: 1.9rem !important;
+      line-height: 1.2;
+    }
+  }
 
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+    .btn-main { background-color: #f39c1f; border: none; padding: 12px 24px; color: black; font-weight: bold; }
+    .section-padding { padding: 80px 0; }
+    .section-bg { background-color: #f9f9f9; }
+    .text-warning { color: #f39c1f !important; }
+  </style>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-
-        <link href="css/templatemo-barber-shop.css" rel="stylesheet">
-
-        <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
-
-        <link rel="icon" href="images/Logo sin fondo.png" type="image/png">
-
-        <link rel="preload" href="images/BannerInicio.webp" as="image">
-        
-
-    </head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YFYR9R6VB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2YFYR9R6VB');
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        "name": "La Atajada",
+        "url": "https://la-atajada.com",
+        "logo": "https://la-atajada.com/images/Logos/Logo1200x630.png",
+        "description": "Entrenamiento profesional de porteros en Guatemala con tecnología, seguimiento y metodología especializada.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "GT"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+502 3107 2961",
+          "contactType": "customer support",
+          "availableLanguage": "es"
+        },
+        "sameAs": [
+          "https://www.instagram.com/laatajadagt",
+          "https://www.facebook.com/profile.php?id=61568845569744",
+          "https://www.tiktok.com/@laatajada.gt"
+        ]
+      }
 </script>
-    
-    <body>
 
-        <div class="container-fluid">
-            <div class="row">
+</head>
 
-                <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body>
 
-                <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse p-0">
+  <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: white;">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="images/Logo-sin-fondo.svg" alt="Logo" style="height: 40px; margin-right: 2px;">
+            <span style="font-weight: bold; color: #f39c1f;">La Atajada</span>
+          </a>
 
-                    <div class="position-sticky sidebar-sticky d-flex flex-column justify-content-center align-items-center">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="images/Logo Sin Fondo (2).png" class="logo-image img-fluid" alt="Logo de La Atajada - Especialistas en preparación de porteros.">
-                        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Inicio</a>
-                            </li>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
+              <li class="nav-item"><a class="nav-link" href="#modo-carrera">Modo Carrera</a></li>
+              <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+              <li class="nav-item"><a class="nav-link" href="#eventos">Eventos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+              <li class="nav-item">
+                <a class="btn btn-main ms-lg-3 mt-2 mt-lg-0" href="https://wa.me/50231072961"><i class="bi-whatsapp"></i> WhatsApp</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">¿Quienes Somos?</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">Paquetes</a>
-                            </li>
+  <!-- HERO -->
+         <section class="hero-section d-flex align-items-center justify-content-center text-center" 
+                style="background-image: url('images/hero-bg.webp'); background-size: cover; background-position: center; position: relative;">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="modo-carrera.html">Modo Carrera</a>
-                            </li>
+                <div class="container position-relative z-2" style="background: rgba(0,0,0,0.6); padding: 60px 40px; border-radius: 12px;">
+                    <h1 class="text-white display-4 fw-bold">Entrenamiento de Porteros en Guatemala</h1>
+                    <p class="lead text-white">Tecnología, metodología y evolución visual en cada sesión</p>
+                    <a href="modo-carrera.html" class="btn custom-btn me-3">Ver Modo Carrera</a>
+                    <a href="#servicios" class="btn custom-border-btn custom-btn-bg-white">Explorar Paquetes</a>
+                </div>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_5">Eventos</a>
-                            </li>
+            </section>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_6">Nuestros clientes</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="/contacto/index.html">Contacto</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                
-                <div class="col-md-8 ms-sm-auto col-lg-9 p-0">
-                    <img src="images/BannerInicio.webp" alt="Bienvenido a La Atajada - Expertos en preparación de porteros para academias y clubes." class="profile-img">
-                <!-- Prueba Quitar Inicio
-                 
-                <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
 
-                            <div class="container">
-                                <div class="row">
 
-                                    <div class="col-lg-8 col-12">
-                                        <h1 class="text-white mb-lg-3 mb-4"><strong>La <em>Atajada</em></strong></h1>
-                                        <p class="text-black">Servicio de preparación de porteros</p>
-                                        <br>
-                                        <a class="btn custom-btn custom-border-btn custom-btn-bg-white smoothscroll me-2 mb-2" href="#section_2">¿Quienes Somos?</a>
-
-                                        <a class="btn custom-btn smoothscroll mb-2" href="#section_4">Nuestros Paquetes</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                    </section>
-                
-                -->
-                
-                <section class="services-section section-padding" id="section_1">
-                        
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-lg-12 col-12 mx-auto">
-                                    
-                                    <h1 class="mb-4">La Mejor Preparación de Porteros en Guatemala</h1>
-
-                                    <div class="border-bottom pb-3 mb-5">
-                                        <p>En La Atajada somos líderes en la preparación de porteros en Guatemala. Ofrecemos entrenamiento especializado para academias de fútbol y porteros individuales. ¡Mejora tu rendimiento hoy!</p>
-                                    </div>
-                                </div>
-                                
-                <section id="section_2">
-                                    <div class="col-lg-12 col-12 mx-auto">
-                                        <h2 class="mb-4">¿Quienes Somos?</h2>
-    
-                                        <p class="lead">
-                                            En La Atajada somos una empresa especializada en la preparación de porteros, ofreciendo un servicio tanto a nivel individual como a academias de fútbol y clubes que no cuentan con entrenadores especializados. Nos destacamos por nuestra metodología avanzada, avalada por resultados en el fútbol profesional, que garantiza una formación integral y efectiva. Además, brindamos un seguimiento detallado a través de reportes mensuales que evalúan el progreso de cada portero. Nuestro objetivo es elevar el rendimiento y profesionalismo en la posición de portero, con un servicio de alta calidad adaptado a las necesidades de cada cliente.</p>
-                                        <div class="col-md-5">
-                                            <br>
-                                            <img src="images/LaAatajadaNB.jpeg" class="profile-img" alt="Logo de La Atajada - Especialistas en preparación de porteros.">
-                                          </div>
-                                    </div>
-
-                                
-                                
-
-                                
-
-                            </div>
-                        </div>
-                    
-                        <div class="container">
-                            <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading"><br>Juan José Caniz <br> <span style="color: #f39c1f;">Director General</span></h2>
-        <p class="lead">Co-fundador de La Atajada siendo entrenador de futbol Licencia A. Avalada por Concacaf y FIFA, Juan José Caniz tiene más de 10 años de experiencia preparando porteros en 3ª, 2ª y 1ª División de Guatemala, logrando ascensos a Liga Nacional y destacando con porteros menos vencidos. <br>
-          Gracias a su experiencia, ha creado su propia metodología de entrenamiento, adaptada a las necesidades de cada portero, garantizando su progreso. Reconocido por su profesionalismo y ética, Juan José combina exigencia con un carácter cercano y siempre busca la mejora continua.
-        </p>
+  <!-- QUIÉNES SOMOS -->
+  <section class="section-padding" id="quienes-somos">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <h2 class="text-warning text-center">Metodología profesional para la preparación de porteros</h2>
+        <p class="lead">Conocé al equipo detrás de La Atajada</p>
       </div>
-      <div class="col-md-5">
-        <br>
-        <img src="images/Perfil/PerfilJuanjo.png" class="profile-img" alt="Director General de La Atajada, encargado de entrenamientos y capacitación de entrenadores.">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="images/Perfil/PerfilJuanjo.webp" loading="lazy" class="img-fluid rounded-circle mb-3" alt="Juanjo">
+          <h5>Juan José Caniz</h5>
+          <p class="text-warning">Director General</p>
+          <p>Fundador de la metodología de La Atajada. Licencia A. Experiencia en todas las divisiones de Guatemala.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="images/Perfil/Perfil-Horacio.webp" loading="lazy" class="img-fluid rounded-circle mb-3" alt="Horacio">
+          <h5>Horacio Caniz</h5>
+          <p class="text-warning">Director Administrativo</p>
+          <p>Futbolista profesional y desarrollador de software. Creador de la plataforma tecnológica de La Atajada.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="images/Perfil/MichellePerfil.webp" loading="lazy" class="img-fluid rounded-circle mb-3" alt="Michelle">
+          <h5>Michelle Meyer</h5>
+          <p class="text-warning">Asistente Administrativa</p>
+          <p>Psicóloga en formación. Organiza entrenos, reportes y coordinación con academias.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading"><br>Horacio Caniz <br> <span style="color: #f39c1f;">Director Administrativo</span></h2>
-        <p class="lead">Co-fundador de La Atajada siendo futbolista profesional en activo y desarrollador de software, Horacio es el responsable de las estrategias de crecimiento, negociación con clientes y manejo financiero de La Atajada. Muchas de las ideas clave que impulsan la empresa provienen de su visión clara y precisa, resultado de su experiencia tanto en el fútbol como en el ámbito empresarial. <br> 
-          Su enfoque se centra en mejorar constantemente el servicio, capacitando al personal para garantizar un funcionamiento óptimo. Con un entendimiento profundo de las necesidades de los clientes y usuarios finales, Horacio combina ética laboral, empatía y compromiso para asegurar el crecimiento sostenible de la empresa.
-        </p>
-      </div>
-      <div class="col-md-5 order-md-1">
+  <!-- MODO CARRERA -->
+  <section class="section-padding section-bg" id="modo-carrera">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <img src="images/mockupCarta.webp" loading="lazy" class="img-fluid rounded shadow" alt="Carta de evaluación FIFA para porteros de Guatemala">
+        </div>
+        <div class="col-lg-6">
         <br>
-        <img src="images/Perfil/Perfil Horacio.jpeg" class="profile-img" alt="Director Administrativo de La Atajada, responsable de estrategias, clientes y gestión de pagos.">
+          <h2 class="text-warning mb-3">Clases personalizadas y evolución real para porteros</h2>
+          <p>Evaluamos a cada portero como si estuviera en su propio videojuego. Sistema de XP, cartas tipo FIFA, y seguimiento real. Entrenamiento con motivación, datos y profesionalismo.</p>
+          <a href="modo-carrera.html" class="btn btn-main mt-3">Explorar sistema</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <hr class="featurette-divider">
-
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading"><br>Michelle Meyer <br> <span style="color: #f39c1f;">Asistente Administrativa</span></h2>
-        <p class="lead">Estudiante de Psicología Clínica y con más de 4 años de experiencia en el área administrativa, Michelle es el enlace clave entre La Atajada y las academias con las que colaboramos. Gestiona el control de entrenos, reportes semanales, y coordina los horarios del equipo de entrenadores, además de encargarse de los cobros y la atención al cliente. <br>
-          Gracias a su formación en Psicología, Michelle comprende las necesidades de cada cliente y sabe cómo interactuar de manera efectiva según el perfil de cada persona. Destaca por su responsabilidad, organización y proactividad, además de mantener siempre una actitud ética y relaciones interpersonales de calidad.
-        </p>
-      </div>
-      <div class="col-md-5">
-        <br>
-        <img src="images/Perfil/Michelle perfil.jpg" class="profile-img" alt="Asistente Administrativa de La Atajada, encargada de asignación de entrenos y control de reportes.">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-                        </div>
-                    </section>
-
-                <section class="services-section section-padding" id="section_3">     
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-12">
-                                    <h2 class="mb-5">Nuestros Paquetes</h2>
-                                </div>
-
-                                <div class="col-lg-6 col-12 mb-4">
-                                    
-                                        <div class="profile-img">
-                                            <a href="Elite.html"><img src="images/Paquetes/Atajada-Elite.webp" class="services-image img-fluid" alt="Paquete Atajada Élite - 4 entrenos mensuales de preparación de porteros con La Atajada."></a>
-    
-                                            
-                                        </div>
-                                    </div>
-
-                                <div class="col-lg-6 col-12 mb-4">
-                                    <div class="profile-img">
-                                        <a href="Intermedia.html"><img src="images/Paquetes/Atajada-Intermedia.webp" class="services-image img-fluid" alt="Paquete Atajada Intermedia - 3 entrenos mensuales para mejorar el rendimiento de porteros."></a>
-
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-12 mb-4 ">
-                                    <div class="profile-img">
-                                        <a href="Básica.html"><img src="images/Paquetes/Atajada-Basica.webp" class="services-image img-fluid" alt="Paquete Atajada Básica - 2 entrenos al mes para formación de porteros en academias."></a>
-
-                                       
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <div class="profile-img">
-                                        <a href="Marketing.html"><img src="images/Paquetes/Marketing-Blanco-con-Naranja.webp" class="services-image img-fluid" alt="Paquete de marketing para academias - Fotografía profesional y gestión de redes sociales."></a>
-
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <div class="profile-img">
-                                        <a href="Escolar.html"><img src="images/Paquetes/Atajada Escolar.webp" class="services-image img-fluid" alt="Entrenamiento de porteros para colegios - Desarrollo de academias de arqueros en instituciones escolares."></a>
-
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="services-section section-padding" id="modo_carrera_home" style="background-color: #f9f9f9;">
-                        <div class="container">
-                            <div class="row align-items-center">
-
-                            <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                                <img src="images/mockupCarta.png" class="img-fluid rounded shadow carta-hover" alt="Modo Carrera en la Vida Real">
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <h2 class="mb-3" style="color: #f39c1f;">Modo Carrera en la Vida Real</h2>
-                                <p>¿Tu academia ya evalúa el progreso de sus porteros como en FIFA? En La Atajada, cada portero tiene su propia carta digital que evoluciona mes a mes según su rendimiento real. ¡Motivación, datos y visuales para destacar su crecimiento!</p>
-                                <a href="modo-carrera.html" class="btn custom-btn mt-3">Ver cómo funciona</a>
-                            </div>
-
-                            </div>
-                        </div>
-                    </section>
-
-
-                    <section class="contact-section" id="section_5">
-                        <div class="section-padding section-bg">
-                            <div class="container">
-                                <div class="row">   
-    
-                                    <div class="col-lg-8 col-12 mx-auto">
-                                        <h2 class="text-center">Eventos</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="BatallaPorteros.html"><img src="images/Paquetes/BannerBatallaDePorteros.jpg" alt="Batalla de Porteros - Evento de competencia y entrenamiento para arqueros organizado por La Atajada." class="profile-img"></a>
-                    
-                    </section>
-    
-                    <section id="section_6">
-                        <br>
-                        <div class="row d-flex justify-content-center">
-                          <div class="col-md-10 col-xl-8 text-center">
-                            <h3 class="mb-4">Nuestros Clientes</h3>
-                            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
-                                En La Atajada, trabajamos con academias, clubes y porteros individuales que buscan un entrenamiento especializado y profesional. Nuestra metodología ha ayudado a mejorar el rendimiento de muchos arqueros, brindando una preparación que marca la diferencia en el campo.
-                                Aquí algunos de nuestros clientes que ya confían en nosotros:
-                            </p>
-                          </div>
-                        </div>
-                      
-                        <div class="row text-center d-flex align-items-stretch">
-                          <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
-                            <div class="card testimonial-card">
-                              <div class="card-up" style="background-color: #32cd32;"></div>
-                              <div class="avatar mx-auto bg-white">
-                                <img src="images/Logos/LogoJC.webp"
-                                  class="rounded-circle img-fluid"  alt="Entrenamiento de porteros en Academia JC con el método de La Atajada."/>
-                              </div>
-                              <div class="card-body">
-                                <h4 class="mb-4">Academia JC</h4>
-                                <hr />
-                                <p class="dark-grey-text mt-4">
-                                  <i class="fas fa-quote-left pe-2"></i>Antes no contábamos con un entrenador de porteros especializado. Desde que trabajamos con La Atajada, nuestros arqueros han desarrollado habilidades clave que los han hecho destacar en cada partido.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
-                            <div class="card testimonial-card">
-                              <div class="card-up" style="background-color: #3e5f8a;"></div>
-                              <div class="avatar mx-auto bg-white">
-                                <img src="images/Logos/LogoAtletic.webp"
-                                  class="rounded-circle img-fluid" alt="Testimonio de Atletic sobre la preparación de porteros con La Atajada." />
-                              </div>
-                              <div class="card-body">
-                                <h4 class="mb-4">Atletic</h4>
-                                <hr />
-                                <p class="dark-grey-text mt-4">
-                                  <i class="fas fa-quote-left pe-2"></i>Gracias a La Atajada, nuestros porteros han mejorado notablemente en su técnica y confianza. Su metodología y reportes de seguimiento nos han permitido ver un progreso real en cada jugador.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-0 d-flex align-items-stretch">
-                            <div class="card testimonial-card">
-                              <div class="card-up" style="background-color: #ffcbdb;"></div>
-                              <div class="avatar mx-auto bg-white">
-                                <img src="images/Logos/LogoRosa.webp"
-                                  class="rounded-circle img-fluid" alt="Testimonio de Javier del Cid sobre la preparación de porteros con La Atajada."/>
-                              </div>
-                              <div class="card-body">
-                                <h4 class="mb-4">Javier del Cid</h4>
-                                <hr />
-                                <p class="dark-grey-text mt-4">
-                                  <i class="fas fa-quote-left pe-2"></i>Entrenar con La Atajada me ha ayudado a perfeccionar mis reflejos y posicionamiento. Cada sesión está bien estructurada y enfocada en mi crecimiento como arquero.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </section>
-               
-
-                      <br>
-
-                <section class="contact-section" id="section_7">
-                    <div class="section-padding section-bg">
-                        <div class="container">
-                            <div class="row">   
-
-                                <div class="col-lg-8 col-12 mx-auto">
-                                    <h2 class="text-center">Contáctanos</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-padding">
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col-lg-6 col-12">
-                                    <h5 class="mb-3"><strong>Información de</strong> Contacto</h5>
-
-                                    <p class="text-white d-flex mb-1">
-                                        <a href="tel: 3107-2961" class="site-footer-link">
-                                            (+502) 
-                                            3107 - 2961
-                                        </a>
-                                    </p>
-
-                                    <p class="text-white d-flex">
-                                        <a href="mailto:info@la-atajada.com" class="site-footer-link">
-                                            info@la-atajada.com
-                                        </a>
-                                    </p>
-
-                                    <ul class="social-icon">
-                                        <li class="social-icon-item">
-                                            <a href="https://www.facebook.com/profile.php?id=61568845569744" class="social-icon-link bi-facebook">
-                                            </a>
-                                        </li>
-            
-                                        
-            
-                                        <li class="social-icon-item">
-                                            <a href="https://instagram.com/laatajadagt" class="social-icon-link bi-instagram">
-                                            </a>
-                                        </li>
-
-                                        
-
-                                        <li class="social-icon-item">
-                                            <a href="https://wa.me/+50231072961" class="social-icon-link bi-whatsapp">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-lg-5 col-12 contact-block-wrap mt-5 mt-lg-0 pt-4 pt-lg-0 mx-auto">
-                                    <div class="contact-block">
-                                        <h6 class="mb-0">
-                                            <i class="custom-icon bi-clock me-3"></i>
-
-                                            <strong>Nuestro horario</strong>
-
-                                            <span class="ms-auto">09:00 AM - 8:00 PM</span>
-                                        </h6>
-                                    </div>
-                                </div>
-
-                               
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <footer class="site-footer">
-                    <div class="container">
-                        <div class="row">
-
-                          
-
-                    <div class="site-footer-bottom">
-                        <div class="container">
-                            <div class="row align-items-center">
-
-                                <div class="col-lg-8 col-12 mt-4">
-                                    <p class="copyright-text mb-0">Copyright © 2025 La Atajada Desarrollado por: <a href="https://venweb.site" rel="nofollow" target="_blank">VenWeb</a></p>
-                                </div>
-
-                                <div class="col-lg-2 col-md-3 col-3 mt-lg-4 ms-auto">
-                                    <a href="#section_1" class="back-top-icon smoothscroll" title="Back Top">
-                                        <i class="bi-arrow-up-circle"></i>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+  <!-- SERVICIOS / PAQUETES -->
+  <section class="section-padding" id="servicios">
+    <div class="container">
+      <h2 class="text-warning text-center mb-5">Nuestros paquetes de entrenamiento para arqueros en Guatemala</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="images/Paquetes/Atajada-Elite.webp" loading="lazy" class="card-img-top" alt="Elite">
+            <div class="card-body">
+              <h5 class="card-title">Atajada Elite</h5>
+              <p class="card-text">Nuestro paquete más completo para academias con alta exigencia técnica.</p>
+              <a href="Elite.html" class="btn btn-main">Ver más</a>
             </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="images/Paquetes/Atajada-Intermedia.webp" loading="lazy" class="card-img-top" alt="Intermedia">
+            <div class="card-body">
+              <h5 class="card-title">Atajada Intermedia</h5>
+              <p class="card-text">Un balance ideal entre constancia y presupuesto. Entrenos mensuales.</p>
+              <a href="Intermedia.html" class="btn btn-main">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="images/Paquetes/Atajada-Basica.webp" loading="lazy" class="card-img-top" alt="Básica">
+            <div class="card-body">
+              <h5 class="card-title">Atajada Básica</h5>
+              <p class="card-text">Paquete de introducción para porteros nuevos o academias en formación.</p>
+              <a href="Básica.html" class="btn btn-main">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/custom.js"></script>
+  <!-- EVENTOS -->
+  <section class="section-padding section-bg" id="eventos">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <img src="images/Paquetes/BannerBatallaDePorteros.webp" loading="lazy" class="img-fluid rounded shadow" alt="Evento">
+        </div>
+        <div class="col-lg-6">
+            <br>
+          <h2 class="text-warning mb-3">Eventos únicos para porteros en Guatemala</h2>
+          <p>Competencia 1vs1 con reglas dinámicas. Evento único en Guatemala que desafía reflejos y técnica. Incluye premios, camisola y guantes para los participantes.</p>
+          <a href="BatallaPorteros.html" class="btn btn-main mt-3">Ver evento</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </body>
+  <!-- TESTIMONIOS -->
+  <section class="section-padding" id="testimonios">
+    <div class="container text-center">
+      <h2 class="text-warning mb-5">Testimonios reales de academias y porteros satisfechos</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="images/Logos/LogoJC.webp" loading="lazy" class="rounded-circle mb-3" alt="Testimonio Academia JC" style="width: 100px; height: 100px;">
+          <blockquote>“Nuestros arqueros han mejorado mucho desde que entrenan con La Atajada. ¡Ahora marcan la diferencia!”</blockquote>
+          <p class="text-warning">Academia JC</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/Logos/LogoAtletic.webp" loading="lazy" class="rounded-circle mb-3" alt="Testimonio Academia Atletic" style="width: 100px; height: 100px;">
+          <blockquote>“Me gusta que cada entreno tiene seguimiento y que los niños reciben feedback real.”</blockquote>
+          <p class="text-warning">Atletic</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/Logos/LogoRosa.webp" loading="lazy" class="rounded-circle mb-3" alt="Testimonio Academia Javier del Cid" style="width: 100px; height: 100px;">
+          <blockquote>“Cada sesión me hace sentir más preparado. Las cartas me motivan a seguir creciendo.”</blockquote>
+          <p class="text-warning">Javier del Cid</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section-padding text-center" style="background-color: #000; color: white;">
+    <div class="container">
+      <h2 class="mb-4" style="color: white;">¿Querés un entrenamiento de porteros profesional y accesible?</h2>
+      <p class="mb-4" style="color: white;">Escribinos y convertí cada entreno en una evolución real. Sumate a La Atajada hoy mismo.</p>
+      <a href="https://wa.me/50231072961" class="btn btn-main"><i class="bi-whatsapp"></i> Contactar por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer text-center py-4">
+    <div class="container">
+      <p class="mb-0">© 2025 La Atajada. Desarrollado por <a href="https://venweb.site" target="_blank">venweb</a></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
 </html>
