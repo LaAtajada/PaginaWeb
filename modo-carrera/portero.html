@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Goalkeeper Profile</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <button class="back-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+    <h1>LA ATAJADA</h1>
+    <div class="spacer"></div>
+  </header>
+
+  <main class="main-container">
+    <div class="profile-card">
+      <div class="profile-banner"></div>
+      <div class="profile-image-wrapper">
+        <div class="profile-image-container">
+            <img src="image.png" alt="Goalkeeper profile" class="profile-image" />
+        </div>
+       </div>
+
+
+      <div class="profile-info">
+        <div class="info-top">
+          <div>
+            <h2 id="nombre-portero">Manuel Neuer</h2>
+            <p id="datos-portero">37 años • Bayern Academy</p>
+          </div>
+          <div class="ovr-badge">OVR <span id="ovr">82</span></div>
+        </div>
+
+        <canvas id="radarChart" width="300" height="300"></canvas>
+
+        <div class="attribute-pills">
+          <button onclick="openModal('ATR')">ATR</button>
+          <button onclick="openModal('J.AE')">J.AE</button>
+          <button onclick="openModal('VOZ')">VOZ</button>
+          <button onclick="openModal('CAI')">CAI</button>
+          <button onclick="openModal('J.PIE')">J.PIE</button>
+        </div>
+
+        <div class="xp-bar-container">
+          <div class="xp-labels">
+            <span>Experiencia</span><span id="xp-label">630 / 1000 XP</span>
+          </div>
+          <div class="xp-bar-bg">
+            <div id="xp-bar" class="xp-bar-fill" style="width: 63%"></div>
+          </div>
+        </div>
+
+        <button class="cta-button">Ver carta estilo FIFA</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">ATR: Atrpe</h3>
+        <button onclick="closeModal()">X</button>
+      </div>
+      <div class="modal-body">
+        <div class="xp-labels">
+          <span>Current Level</span><span id="modal-value">85 / 100</span>
+        </div>
+        <div class="xp-bar-bg">
+          <div id="modal-bar" class="xp-bar-fill" style="width: 85%"></div>
+        </div>
+        <p id="modal-msg">+15 points to level up</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="portero.js"></script>
+</body>
+</html>
