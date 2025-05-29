@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia - La Atajada</title>
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="academias.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-icons.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/templatemo-barber-shop.css" media="print" onload="this.media='all'">
+
+  <link rel="icon" href="/images/Logo sin fondo.png" type="image/png">
+  <style>
+    body {
+      
+      font-family: 'Unbounded', sans-serif;
+    }
+    
+
+    .navbar {
+      background-color: #111827;
+    }
+    .navbar-brand span {
+      color: #f39c1f;
+      font-weight: bold;
+    }
+    .goalkeeper-card {
+      background-color: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .goalkeeper-card:hover {
+      border-color: #f39c1f;
+      box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+    }
+    .goalkeeper-avatar {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      background-color: #374151;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .goalkeeper-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .btn-orange {
+      background-color: #f39c1f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .btn-orange:hover {
+      background-color: #ea580c;
+    }
+    .nombre-portero{
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR UNIFICADA -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: white;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/index.html">
+            <img src="/images/Logo-sin-fondo.svg" alt="Logo" style="height: 40px; margin-right: 2px;">
+            <span style="font-weight: bold; color: #f39c1f;">Modo-Carrera</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="z-index:1051;">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/modo-carrera/index.html">Academias</a></li>
+                <li class="nav-item">
+                <a class="btn btn-main ms-lg-3 mt-2 mt-lg-0" href="https://wa.me/50231072961" target="_blank">
+                    <i class="bi bi-whatsapp"></i> WhatsApp
+                </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+<main style="padding-top: 10px;">
+
+  <div class="container pt-5 mt-5">
+    <div class="text-center mb-5">
+      <div class="goalkeeper-avatar mb-3">
+        <img src="Logo Sin Fondo (2).png" alt="Academia Logo">
+      </div>
+      <h2 class="mb-1">Academia Nombre</h2>
+      <p class="text-muted">Sistema de entrenamiento para porteros</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="goalkeeper-card">
+          <div class="goalkeeper-avatar">
+            <img src="image.png" alt="Portero 1">
+          </div>
+          <h5 class="nombre-portero">Portero Nombre 1</h5>
+          <p class="text-muted">Portero</p>
+          <a href="portero.html?id=1" class="btn btn-orange">Ver progreso</a>
+        </div>
+      </div>
+      <!-- Repetir esta card para más porteros -->
+    </div>
+  </div>
+</main>
+
+  <!-- Bootstrap bundle con Popper incluido -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

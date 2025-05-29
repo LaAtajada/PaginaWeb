@@ -12,7 +12,7 @@ function openModal(attr) {
   document.getElementById('modal-title').textContent = `${attr}: ${data.name}`;
   document.getElementById('modal-value').textContent = `${data.value} / 100`;
   document.getElementById('modal-bar').style.width = data.value + '%';
-  document.getElementById('modal-msg').textContent = `+${100 - data.value} points to level up`;
+  document.getElementById('modal-msg').textContent = `+${100 - data.value} puntos necesarios para subir de nivel`;
 }
 
 function closeModal() {

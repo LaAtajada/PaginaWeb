@@ -102,13 +102,13 @@ body {
   background: #f39c1f;
   padding: 4px 8px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 /* Gráfico radar */
 #radarChart {
-  max-width: 200px;
+  max-width: 300px;
   margin: 20px auto 10px auto;
   display: block;
 }
@@ -194,6 +194,7 @@ body {
 .modal-header h3 {
   font-size: 18px;
   font-weight: 700;
+  color: white;
 }
 .modal-header button {
   background: none;
