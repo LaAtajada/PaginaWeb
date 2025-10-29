@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Batalla de Porteros 2025 | La Atajada</title>
+  <meta name="description" content="Donde los reflejos se vuelven leyenda. La competencia definitiva para arqueros - 5 y 6 de diciembre, Ciudad de Guatemala">
+  <meta name="generator" content="v0.app" />
+  <meta property="og:title" content="La Batalla de Porteros 2025 | La Atajada">
+  <meta property="og:description" content="Donde los reflejos se vuelven leyenda. Diciembre 2025, Ciudad de Guatemala.">
+  <meta property="og:image" content="assets/img/og.png">
+  <meta name="theme-color" content="#f39c1f">
+
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts (reemplazo de next/font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+
+
+  <!-- Tailwind CSS vía CDN (sin build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brutBlack: '#000000',
+            brutWhite: '#ffffff',
+            brutOrange: '#f39c1f',
+            brutGray: '#2e2e2e',
+          },
+          fontFamily: {
+            sans: ['Barlow Condensed', 'system-ui', 'sans-serif'],
+            display: ['Anton', 'impact', 'sans-serif'],
+          },
+          borderRadius: { none: '0' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root{
+      --brutalist-black:#000; --brutalist-white:#fff; --brutalist-orange:#f39c1f; --brutalist-gray:#2e2e2e;
+      --background:var(--brutalist-black); --foreground:var(--brutalist-white);
+      --card:var(--brutalist-gray); --card-foreground:var(--brutalist-white);
+      --popover:var(--brutalist-black); --popover-foreground:var(--brutalist-white);
+      --primary:var(--brutalist-orange); --primary-foreground:var(--brutalist-black);
+      --secondary:var(--brutalist-gray); --secondary-foreground:var(--brutalist-white);
+      --muted:var(--brutalist-gray); --muted-foreground:#999;
+      --accent:var(--brutalist-orange); --accent-foreground:var(--brutalist-black);
+      --border:var(--brutalist-gray); --input:var(--brutalist-gray); --ring:var(--brutalist-orange);
+    }
+    body{ background:var(--background); color:var(--foreground); }
+
+    /* helpers inspirados en tu globals.css */
+    .font-display{ font-family: Anton, impact, sans-serif; }
+    .text-brutalist-orange{ color: var(--brutalist-orange); }
+    .bg-brutalist-orange{ background-color: var(--brutalist-orange); }
+    .bg-brutalist-gray{ background-color: var(--brutalist-gray); }
+    .border-brutalist-orange{ border-color: var(--brutalist-orange); }
+
+    /* glitch */
+    @keyframes glitch {
+      0%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(-2px,-2px)}
+      60%{transform:translate(2px,2px)}80%{transform:translate(2px,-2px)}100%{transform:translate(0)}
+    }
+    .glitch{ animation:glitch .3s cubic-bezier(.25,.46,.45,.94) both; }
+
+    /* grain overlay */
+    @keyframes grain {
+      0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}
+      20%{transform:translate(-15%,5%)}30%{transform:translate(7%,-25%)}
+      40%{transform:translate(-5%,25%)}50%{transform:translate(-15%,10%)}
+      60%{transform:translate(15%,0%)}70%{transform:translate(0%,15%)}
+      80%{transform:translate(3%,35%)}90%{transform:translate(-10%,10%)}
+    }
+    .grain{ position:relative; }
+    .grain::before{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.03;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation:grain 8s steps(10) infinite;
+    }
+
+    /* Hover con textura y rotación (sin React state) */
+.stage-card { transform: translateZ(0); }
+.stage-card::after{
+  content:""; position:absolute; inset:0; opacity:0; transition:opacity .3s ease;
+  background-image:url('assets/img/grunge-texture-overlay.jpg');
+  background-size:cover; pointer-events:none;
+}
+.stage-card:hover{
+  transform: scale(1.05) rotate(2deg);
+}
+.stage-card:hover::after{ opacity:.2; }
+
+
+    .bg-cement{ background-color: var(--brutalist-gray); }
+/* overlay y numeración de cada thumb */
+.gal-overlay{
+  position:absolute; inset:0; background:rgba(0,0,0,.6);
+  opacity:0; transition:opacity .3s; display:flex; align-items:center; justify-content:center;
+}
+.gal-item:hover .gal-overlay{ opacity:1; }
+.gal-number{
+  position:absolute; top:.5rem; right:.5rem; background:var(--brutalist-orange);
+  color:#000; font-weight:900; font-size:.75rem; padding:.25rem .5rem; border:2px solid #000;
+}
+
+.border-top{ border-top:2px solid rgba(255,255,255,.2); }
+/* Utilidad genérica para ocultar (no dependas de Tailwind) */
+.hide { display: none !important; }
+
+/* Links del menú mobile */
+#mobileMenu .mobile-link{
+  display:block; padding:.875rem 1rem; margin:.25rem 0;
+  color:rgba(255,255,255,.9); border:1px solid transparent; border-radius:.5rem;
+}
+#mobileMenu .mobile-link:hover{
+  color:var(--brutalist-orange); border-color:rgba(255,255,255,.18); background-color:rgba(255,255,255,.03);
+}
+
+
+/* Toggle íconos sin Tailwind */
+.site-header.open #iconBurger{ display:none !important; }
+.site-header.open #iconClose{ display:block !important; }
+
+/* Estado cerrado por defecto (sin Tailwind) */
+#mobileMenu{
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+
+
+/* 1) El menú móvil NO debe dar altura al header */
+.site-header{ position: sticky; top:0; z-index: 50; }
+#mobileMenu{
+  position: absolute;      /* <- clave */
+  top: 100%; left: 0; right: 0;
+  max-height: 0;           /* cerrado por defecto */
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .2s ease, transform .2s ease, max-height .2s ease;
+}
+
+/* 2) Abierto: visible y con altura */
+.site-header.open #mobileMenu{
+  pointer-events: auto;
+  opacity: 1;
+  transform: none;
+  max-height: 85vh;        /* lo suficiente para los links */
+}
+
+
+
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAVBAR simple; puedes reemplazar cuando peguemos tu <Footer/> real -->
+ <header class="site-header sticky top-0 z-50 bg-black/70 backdrop-blur">
+  <div class="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="#hero" class="flex items-center gap-3">
+      <img src="assets/img/logoSinFondo.png" alt="La Atajada" class="h-7 w-auto">
+      <span class="font-display tracking-wide text-white text-lg">La Atajada</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a class="hover:text-brutalist-orange text-white/90" href="#about">Sobre</a>
+      <a class="hover:text-brutalist-orange text-white/90" href="#format">Formato</a>
+      <a class="hover:text-brutalist-orange text-white/90" href="#prices">Precios</a>
+      <a class="hover:text-brutalist-orange text-white/90" href="#registration">Registro</a>
+      <a class="hover:text-brutalist-orange text-white/90" href="#gallery">Galería</a>
+      <a class="hover:text-brutalist-orange text-white/90" href="#faq">FAQ</a>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button id="navToggle"
+            class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-white/25 text-white"
+            aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <!-- Íconos: usamos .hide en lugar de Tailwind 'hidden' -->
+      <svg id="iconBurger" class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg id="iconClose" class="h-6 w-6 hide" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer (cerrado por defecto) -->
+  <div id="mobileMenu"
+       class="md:hidden pointer-events-none opacity-0 -translate-y-2 transition-all duration-200">
+    <nav class="mx-3 mb-3 rounded-xl border border-white/15 bg-black/90 backdrop-blur p-3 shadow-lg">
+      <a class="mobile-link" href="#about">Sobre</a>
+      <a class="mobile-link" href="#format">Formato</a>
+      <a class="mobile-link" href="#prices">Precios</a>
+      <a class="mobile-link" href="#registration">Registro</a>
+      <a class="mobile-link" href="#gallery">Galería</a>
+      <a class="mobile-link" href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+
+
+  <!-- MAIN: corresponde a tu /app/page.tsx -->
+  <main class="min-h-screen">
+    <!-- <HeroSection /> -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden grain">
+  <!-- Urban texture background -->
+  <div class="absolute inset-0 opacity-20"
+       style="background-image:url('assets/img/urban-concrete-texture-dark-grunge.jpg');background-size:cover;background-position:center;"></div>
+
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-4 py-20 text-center">
+    <div id="hero-glitch" class="space-y-8">
+      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter text-white">
+        BATALLA DE<br>
+        <span class="text-brutalist-orange">PORTEROS</span><br>
+        <span class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl">2025</span>
+      </h1>
+
+      <p class="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide text-white/90 max-w-3xl mx-auto uppercase">
+        Donde los reflejos se vuelven leyenda
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+        <a href="#registration"
+           class="bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-bold text-lg px-8 py-6 uppercase tracking-wider border-4 border-black transition-transform hover:scale-105">
+          Inscribirme
+        </a>
+        <a href="#gallery"
+           class="bg-white hover:bg-black hover:text-white text-black font-bold text-lg px-8 py-6 uppercase tracking-wider border-4 border-white transition-all">
+          Ver highlights 2024
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom accent line -->
+  <div class="absolute bottom-0 left-0 right-0 h-2 bg-brutalist-orange"></div>
+</section>
+
+
+    <!-- <AboutSection /> -->
+    <section id="about" class="relative py-20 md:py-32 bg-brutalist-gray overflow-hidden">
+  <!-- Concrete texture -->
+  <div
+    class="absolute inset-0 opacity-10"
+    style="
+      background-image:url('assets/img/concrete-wall-texture-dark.jpg');
+      background-size:cover;"
+  ></div>
+
+  <div class="relative container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text content -->
+      <div class="space-y-6">
+        <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+          LA COMPETENCIA<br>
+          <span class="text-brutalist-orange">DEFINITIVA</span><br>
+          PARA ARQUEROS
+        </h2>
+        <p class="text-lg md:text-xl text-white/80 leading-relaxed font-semibold">
+          La Batalla de Porteros es el evento más intenso y competitivo para guardametas en Guatemala.
+         Un evento único donde demostrarás tus habilidades enfrentándote a otros arqueros en un desafío lleno de intensidad y diversión. Pondrás a prueba tus reflejos, precisión y capacidad de reacción en duelos uno a uno, con porterías enfrentadas en un espacio reducido.
+        </p>
+        <div class="h-1 w-32 bg-brutalist-orange"></div>
+      </div>
+
+      <!-- Image with poster frame -->
+      <div class="relative">
+        <div class="relative border-8 border-white shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-300">
+          <img
+            src="assets/img/about.jpg"
+            alt="Portero en acción"
+            class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-300"
+          >
+          <div class="absolute top-4 right-4 bg-brutalist-orange text-black font-display text-2xl px-4 py-2">
+            2025
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- <FormatSection /> -->
+   <section id="format" class="py-20 md:py-32 bg-black relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 text-white">
+      INFORMCIÓN Y <span class="text-brutalist-orange">CATEGORÍAS</span>
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="stage-card bg-black p-8 border-4 border-white relative overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="relative z-10 space-y-4">
+          <div class="text-6xl"><i class="bi bi-calendar-event"></i></div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold leading-tight text-white">Horario y fecha</h3>
+          <p class="text-white/80 font-semibold leading-relaxed">Inicia desde las 9am hasta las 11am que terminara con la ceremonia de premiacion. <br>Fecha por definir, Diciembre</p>
+        </div>
+        <div class="stage-number text-brutalist-orange font-display text-4xl opacity-50 absolute top-4 right-4">01</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="stage-card bg-brutalist-orange p-8 border-4 border-white relative overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="relative z-10 space-y-4">
+          <div class="text-6xl"><i class="bi bi-geo-alt"></i></div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold leading-tight text-white">Ubicacion</h3>
+          <p class="text-black/80 font-semibold leading-relaxed">Se realizar en los campos de Los Arcos</p>
+          <a href="https://la-atajada.com"><p class="text-black/100 font-bold leading-relaxed">Ver ubicacion</p></a>
+        </div>
+        <div class="stage-number text-black font-display text-4xl opacity-50 absolute top-4 right-4">02</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="stage-card bg-black p-8 border-4 border-white relative overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="relative z-10 space-y-4">
+          <div class="text-6xl"><i class="bi bi-trophy"></i></div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold leading-tight text-white">Categorías</h3>
+          <p class="text-white/150 font-semibold leading-relaxed">-Infantil: 8 a 12 años <br>-Infantil: 13 a 16 años <br>-Libre  </p>
+        </div>
+        <div class="stage-number text-brutalist-orange font-display text-4xl opacity-50 absolute top-4 right-4">03</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="stage-card bg-brutalist-orange p-8 border-4 border-white relative overflow-hidden transition-all duration-300 cursor-pointer">
+        <div class="relative z-10 space-y-4">
+          <div class="text-6xl"><i class="bi bi-file-text"></i></div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold leading-tight text-white">Reglas</h3>
+          <p class="text-black/100 font-semibold leading-relaxed">Partido de 2min de duración en los que a base de despejes, 1vs1 saque con las manos tendras que hacerle gol a tu oponente.</p>
+        </div>
+        <div class="stage-number text-black font-display text-4xl opacity-50 absolute top-4 right-4">04</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- <PricesSection /> -->
+    <section id="prices" class="py-20 md:py-32 bg-white relative overflow-hidden">
+  <!-- Grain texture -->
+  <div class="absolute inset-0 opacity-10 mix-blend-multiply"
+       style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%270 0 400 400%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noiseFilter%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 /%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noiseFilter)%27 /%3E%3C/svg%3E');"></div>
+
+  <div class="relative container mx-auto px-4">
+    <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-4 text-black">
+      PRECIOS Y <span class="text-brutalist-orange">PREMIOS</span>
+    </h2>
+    <p class="text-xl md:text-2xl text-center text-black/70 mb-16 font-bold uppercase tracking-wide">
+      Todo lo que necesitas saber
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <!-- Inscripción -->
+      <div class="bg-black border-8 border-black p-8 md:p-12 relative overflow-hidden group hover:border-brutalist-orange transition-all duration-300">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-brutalist-orange transform rotate-45 translate-x-16 -translate-y-16"></div>
+        <h3 class="font-display text-4xl md:text-5xl font-bold text-white mb-6 relative z-10">INSCRIPCIÓN</h3>
+
+        <div class="space-y-6 relative z-10">
+          <div class="border-l-4 border-brutalist-orange pl-6">
+            <p class="text-white/80 text-lg mb-2 uppercase font-bold">Precio por portero</p>
+            <p class="text-brutalist-orange font-display text-5xl font-bold">Q350</p>
+          </div>
+
+          <div class="bg-brutalist-gray p-6 border-4 border-white">
+            <p class="text-white font-bold uppercase mb-4 text-lg">Incluye:</p>
+            <ul class="space-y-3 text-white/90">
+              <li class="flex items-start gap-3"><span class="text-brutalist-orange text-2xl"><i class="bi bi-person"></i></span><span class="text-lg">Camisola oficial del evento</span></li>
+              <li class="flex items-start gap-3"><span class="text-brutalist-orange text-2xl"><i class="bi bi-camera-video"></i></span><p class="text-lg">Producción visual (fotos profesionales y video en acción)</p></li>
+              <li class="flex items-start gap-3"><span class="text-brutalist-orange text-2xl"><i class="bi bi-person-square"></i></span><span class="text-lg">Tu perfil digital dentro de la plataforma oficial</span></li>
+              <li class="flex items-start gap-3"><span class="text-brutalist-orange text-2xl"><i class="bi bi-instagram"></i></span><span class="text-lg">Contenido para redes sociales y promoción</span></li>
+            </ul>
+          </div>
+
+          <div class="relative mt-8 border-4 border-white bg-brutalist-gray p-6">
+            <img src="assets/img/mockupCamisola.jpg" alt="Camisola oficial" class="w-full h-auto">
+            <div class="absolute bottom-8 left-8 bg-brutalist-orange text-black px-4 py-2 font-display text-xl font-bold">EDICIÓN 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premios -->
+      <div class="bg-brutalist-orange border-8 border-brutalist-orange p-8 md:p-12 relative overflow-hidden group hover:border-black transition-all duration-300">
+        <div class="absolute bottom-0 left-0 w-32 h-32 bg-black transform rotate-45 -translate-x-16 translate-y-16"></div>
+        <h3 class="font-display text-4xl md:text-5xl font-bold text-black mb-6 relative z-10">PREMIOS</h3>
+
+        <div class="space-y-6 relative z-10">
+          <div class="border-l-4 border-black pl-6">
+            <p class="text-black/80 text-lg mb-2 uppercase font-bold">Para los campeones</p>
+            <p class="text-black font-display text-3xl font-bold">DE CADA CATEGORÍA</p>
+          </div>
+
+          <div class="bg-white p-6 border-4 border-black">
+            <p class="text-black font-bold uppercase mb-4 text-lg">El campeón recibe:</p>
+            <ul class="space-y-3 text-black/90">
+              <li class="flex items-start gap-3"><span class="text-brutalist-orange text-2xl"><i class="bi bi-award"></i></span><span class="text-lg font-bold">Guantes profesionales marca ProvasSports</span></li>
+              <li class="flex items-start gap-3"><span class="text-brutalist-orange text-2xl"><i class="bi bi-trophy"></i></span><span class="text-lg font-bold">Trofeo oficial del evento</span></li>
+              <li class="flex items-start gap-3"><span class="text-brutalist-orange text-2xl"><i class="bi bi-graph-up-arrow"></i></span><span class="text-lg font-bold">Proyección mediática y presencia en redes oficiales</span></li>
+            </ul>
+          </div>
+
+          <div class="relative mt-8 border-4 border-black bg-white p-6">
+            <img src="assets/img/guante.jpg" alt="Guantes premio" class="w-full h-auto">
+            <div class="absolute top-8 right-8 bg-black text-brutalist-orange px-4 py-2 font-display text-xl font-bold rotate-3">CAMPEÓN</div>
+          </div>
+
+          <div class="bg-black text-white p-4 text-center border-4 border-black">
+            <p class="font-display text-2xl font-bold uppercase">¡Demuestra tu nivel!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- <RegistrationSection /> -->
+    <section id="registration" class="relative py-20 md:py-32 bg-black overflow-hidden">
+  <!-- Asphalt texture -->
+  <div class="absolute inset-0 opacity-10"
+       style="background-image:url('assets/img/dark-asphalt-texture.png');background-size:cover;"></div>
+
+  <div class="relative container mx-auto px-4 text-center">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <!-- Date and location -->
+      <div class="space-y-4">
+        <div class="inline-block bg-brutalist-orange text-black px-6 py-3 font-display text-2xl md:text-3xl font-bold transform -rotate-2">
+          DICIEMBRE 2025
+        </div>
+        <p class="text-xl md:text-2xl text-white font-bold">CIUDAD DE GUATEMALA</p>
+      </div>
+
+      <!-- Main CTA -->
+      <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+        CUPOS<br><span class="text-brutalist-orange">LIMITADOS</span>
+      </h2>
+      <p class="text-2xl md:text-3xl text-white/90 font-bold uppercase tracking-wide">Pre-registro abierto</p>
+
+      <!-- CTA Button -->
+      <div class="pt-8">
+        <a href="https://wa.me/50231072961?text=Quiero%20inscribirme%20a%20la%20Batalla%20de%20Porteros%202025"
+           class="inline-block bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-display text-2xl md:text-3xl px-12 py-8 uppercase tracking-wider border-8 border-white shadow-2xl transition-transform hover:scale-110 hover:rotate-2">
+          INSCRIBIRME AHORA
+        </a>
+      </div>
+
+      <!-- Accent lines -->
+      <div class="flex justify-center gap-4 pt-8">
+        <div class="h-2 w-24 bg-brutalist-orange"></div>
+        <div class="h-2 w-24 bg-white"></div>
+        <div class="h-2 w-24 bg-brutalist-orange"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- <GallerySection /> -->
+    <section id="gallery" class="relative bg-black py-16 md:py-24 overflow-hidden">
+  <!-- Grain texture -->
+  <div class="absolute inset-0 opacity-[0.15] mix-blend-overlay pointer-events-none">
+    <div class="absolute inset-0"
+         style="background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Header -->
+    <div class="mb-12 md:mb-16">
+      <div class="inline-block border-4 border-brutalist-orange bg-black px-6 py-3 mb-4">
+        <span class="text-brutalist-orange font-bold text-sm md:text-base tracking-wider">EDICIÓN 2024</span>
+      </div>
+      <h2 class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-none mb-4">
+        REVIVE LA<br><span class="text-brutalist-orange">INTENSIDAD</span>
+      </h2>
+      <div class="w-24 h-1 bg-brutalist-orange"></div>
+    </div>
+
+    <!-- Brutalist Grid Gallery -->
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 auto-rows-[150px] md:auto-rows-[250px] gap-3 md:gap-4">
+      <!-- item 1 -->
+      <div class="gal-item relative group cursor-pointer col-span-2 row-span-2 md:col-span-2 md:row-span-2 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image1.jpg"
+           data-alt="Portero atajando en acción">
+        <img src="assets/img/image1.jpg" alt="Portero atajando en acción"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay">
+          <div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div>
+          <p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p>
+        </div>
+        <div class="gal-number">01</div>
+      </div>
+
+      <!-- item 2 -->
+      <div class="gal-item relative group cursor-pointer col-span-1 row-span-1 md:col-span-1 md:row-span-1 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image2.jpg"
+           data-alt="Celebración del campeón">
+        <img src="assets/img/image2.jpg" alt="Celebración del campeón"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay"><div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div><p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p></div>
+        <div class="gal-number">02</div>
+      </div>
+
+      <!-- item 3 -->
+      <div class="gal-item relative group cursor-pointer col-span-1 row-span-2 md:col-span-1 md:row-span-1 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image3.jpg"
+           data-alt="Calentamiento de porteros">
+        <img src="assets/img/image3.jpg" alt="Calentamiento de porteros"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay"><div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div><p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p></div>
+        <div class="gal-number">03</div>
+      </div>
+
+      <!-- item 4 -->
+      <div class="gal-item relative group cursor-pointer col-span-1 row-span-1 md:col-span-1 md:row-span-2 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image4.jpg"
+           data-alt="Atajada espectacular">
+        <img src="assets/img/image4.jpg" alt="Atajada espectacular"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay"><div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div><p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p></div>
+        <div class="gal-number">04</div>
+      </div>
+
+      <!-- item 5 -->
+      <div class="gal-item relative group cursor-pointer col-span-1 row-span-1 md:col-span-2 md:row-span-1 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image5.jpg"
+           data-alt="Público emocionado">
+        <img src="assets/img/image5.jpg" alt="Público emocionado"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay"><div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div><p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p></div>
+        <div class="gal-number">05</div>
+      </div>
+
+      <!-- item 6 -->
+      <div class="gal-item relative group cursor-pointer col-span-2 row-span-1 md:col-span-1 md:row-span-1 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image6.jpg"
+           data-alt="Entrega de premios">
+        <img src="assets/img/image6.jpg" alt="Entrega de premios"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay"><div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div><p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p></div>
+        <div class="gal-number">06</div>
+      </div>
+
+      <!-- item 7 -->
+      <div class="gal-item relative group cursor-pointer col-span-1 row-span-2 md:col-span-1 md:row-span-1 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image7.jpg"
+           data-alt="Tanda de penales">
+        <img src="assets/img/image7.jpg" alt="Tanda de penales"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay"><div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div><p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p></div>
+        <div class="gal-number">07</div>
+      </div>
+
+      <!-- item 8 -->
+      <div class="gal-item relative group cursor-pointer col-span-1 row-span-1 md:col-span-2 md:row-span-1 overflow-hidden border-4 border-white hover:border-brutalist-orange transition-colors duration-300"
+           data-src="assets/img/image8.jpg"
+           data-alt="Foto grupal del torneo">
+        <img src="assets/img/image8.jpg" alt="Foto grupal del torneo"
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110">
+        <div class="gal-overlay"><div class="w-12 h-12 border-4 border-brutalist-orange mx-auto mb-2"></div><p class="text-white font-bold text-sm uppercase tracking-wider">Ver más</p></div>
+        <div class="gal-number">08</div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="border-4 border-white bg-cement p-4 text-center">
+        <div class="font-display text-3xl md:text-4xl font-black text-brutalist-orange">50+</div>
+        <div class="text-white font-bold text-xs md:text-sm uppercase tracking-wider mt-1">Porteros</div>
+      </div>
+      <div class="border-4 border-white bg-cement p-4 text-center">
+        <div class="font-display text-3xl md:text-4xl font-black text-brutalist-orange">200+</div>
+        <div class="text-white font-bold text-xs md:text-sm uppercase tracking-wider mt-1">Atajadas</div>
+      </div>
+      <div class="border-4 border-white bg-cement p-4 text-center">
+        <div class="font-display text-3xl md:text-4xl font-black text-brutalist-orange">1</div>
+        <div class="text-white font-bold text-xs md:text-sm uppercase tracking-wider mt-1">Campeón</div>
+      </div>
+      <div class="border-4 border-white bg-cement p-4 text-center">
+        <div class="font-display text-3xl md:text-4xl font-black text-brutalist-orange">100%</div>
+        <div class="text-white font-bold text-xs md:text-sm uppercase tracking-wider mt-1">Adrenalina</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black/95 z-50 items-center justify-center p-4">
+    <button id="lightbox-close"
+            class="absolute top-4 right-4 text-white hover:text-brutalist-orange transition-colors border-4 border-white hover:border-brutalist-orange w-12 h-12 flex items-center justify-center font-black text-2xl">
+      ×
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain border-4 border-brutalist-orange">
+  </div>
+</section>
+
+
+    <!-- <FAQSection /> -->
+    <section id="faq" class="py-20 md:py-32 bg-black relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display text-5xl md:text-6xl font-bold mb-12 text-white">
+        PREGUNTAS <span class="text-brutalist-orange">FRECUENTES</span>
+      </h2>
+
+      <div id="faq-accordion" class="space-y-4">
+        <!-- Item -->
+        <details class="border-2 border-white bg-brutalist-gray px-6 group">
+          <summary class="py-4 cursor-pointer font-bold text-lg text-white hover:text-brutalist-orange flex items-center justify-between">
+            ¿Quién puede participar?
+            <span class="transition group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="pb-4 text-white/80 leading-relaxed">
+            Cualquier portero mayor de 8 años puede inscribirse. No es necesario ser profesional, pero sí tener experiencia en el puesto.
+          </div>
+        </details>
+
+        <details class="border-2 border-white bg-brutalist-gray px-6 group">
+          <summary class="py-4 cursor-pointer font-bold text-lg text-white hover:text-brutalist-orange flex items-center justify-between">
+            ¿Cuál es el costo de inscripción?
+            <span class="transition group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="pb-4 text-white/80 leading-relaxed">
+            La inscripción tiene un costo de Q350 que incluye participación en todas las etapas, camiseta oficial del evento y acceso a las instalaciones.
+          </div>
+        </details>
+
+        <details class="border-2 border-white bg-brutalist-gray px-6 group">
+          <summary class="py-4 cursor-pointer font-bold text-lg text-white hover:text-brutalist-orange flex items-center justify-between">
+            ¿Qué debo llevar el día del evento?
+            <span class="transition group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="pb-4 text-white/80 leading-relaxed">
+            Debes traer tu equipo completo de portero (guantes, ropa deportiva, etc.) y mucha actitud.
+          </div>
+        </details>
+
+        <details class="border-2 border-white bg-brutalist-gray px-6 group">
+          <summary class="py-4 cursor-pointer font-bold text-lg text-white hover:text-brutalist-orange flex items-center justify-between">
+            ¿Habrá premios?
+            <span class="transition group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="pb-4 text-white/80 leading-relaxed">
+            Sí, el campeón recibirá un trofeo y guantes profesionales de la marca ProvasSports. También habrá reconocimientos para el segundo lugar.
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- <Footer /> -->
+    <footer class="bg-black border-t-8 border-brutalist-orange py-12 md:py-16">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col items-center space-y-8">
+      <!-- Logo/Brand -->
+      <div class="text-center">
+        <h3 class="font-display text-4xl md:text-5xl font-bold text-white mb-2">
+          LA <span class="text-brutalist-orange">ATAJADA</span>
+        </h3>
+        <p class="text-white/60 uppercase tracking-wider font-bold">Organizadores oficiales</p>
+      </div>
+
+      <!-- Social -->
+      <div class="flex gap-6">
+        <a href="https://www.facebook.com/profile.php?id=61568845569744" target="_blank" rel="noopener"
+           class="bg-white hover:bg-brutalist-orange text-black p-4 transition-all duration-300 border-4 border-white hover:border-brutalist-orange"
+           aria-label="Facebook">
+          <!-- Facebook SVG -->
+          <i class="bi bi-facebook"></i>
+        </a>
+
+        <a href="https://instagram.com/laatajadagt" target="_blank" rel="noopener"
+           class="bg-white hover:bg-brutalist-orange text-black p-4 transition-all duration-300 border-4 border-white hover:border-brutalist-orange"
+           aria-label="Instagram">
+          <!-- Instagram SVG -->
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="https://tiktok.com/@laatajada.gt" target="_blank" rel="noopener"
+           class="bg-white hover:bg-brutalist-orange text-black p-4 transition-all duration-300 border-4 border-white hover:border-brutalist-orange"
+           aria-label="TikTok">
+          <!-- TikTok SVG -->
+          <i class="bi bi-tiktok"></i>
+        </a>
+
+        <a href="https://wa.me/50231072961" target="_blank" rel="noopener"
+           class="bg-white hover:bg-brutalist-orange text-black p-4 transition-all duration-300 border-4 border-white hover:border-brutalist-orange"
+           aria-label="WhatsApp">
+          <!-- WhatsApp SVG -->
+          <i class="bi bi-whatsapp"></i>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center pt-8 border-top w-full">
+        <p class="text-white/60 uppercase tracking-wider font-bold text-sm">
+          © 2025 La Batalla de Porteros • Todos los derechos reservados <br> Desarrollado por <a href="https://venweb.site" target="_blank" rel="noopener"><span class="text-brutalist-orange">VENWEB</span></a> 
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </main>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
