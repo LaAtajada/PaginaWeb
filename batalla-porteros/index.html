@@ -116,6 +116,111 @@
 /* Utilidad genérica para ocultar (no dependas de Tailwind) */
 .hide { display: none !important; }
 
+/* Estilos para el formulario brutalista */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f39c1f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  padding-right: 3.5rem !important;
+}
+
+select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f39c1f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+select option {
+  background-color: var(--brutalist-gray);
+  color: var(--brutalist-white);
+  font-weight: bold;
+}
+
+/* Estilo para inputs y selects con hover brutalista */
+input[type="text"]:hover,
+input[type="number"]:hover,
+select:hover {
+  border-color: var(--brutalist-orange);
+  transform: translateX(2px);
+  transition: all 0.2s ease;
+}
+
+/* Estilo para el botón de submit con efecto hover más pronunciado */
+button[type="submit"]:hover {
+  box-shadow: 8px 8px 0px 0px var(--brutalist-white);
+}
+
+/* Estilos personalizados para radio buttons brutalistas */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid var(--brutalist-white);
+  background-color: var(--brutalist-gray);
+  border-radius: 0;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="radio"]:hover {
+  border-color: var(--brutalist-orange);
+  transform: scale(1.1);
+}
+
+input[type="radio"]:checked {
+  background-color: var(--brutalist-orange);
+  border-color: var(--brutalist-orange);
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--brutalist-black);
+  border: 2px solid var(--brutalist-black);
+}
+
+/* Animación para el modal brutalista */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#form-modal.show #modal-content {
+  animation: modalSlideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+#form-modal {
+  backdrop-filter: blur(4px);
+}
+
+/* Efecto glitch para errores */
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+#form-modal.error #modal-content {
+  animation: errorShake 0.5s ease both, modalSlideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  border-color: var(--brutalist-orange);
+}
+
 /* Links del menú mobile */
 #mobileMenu .mobile-link{
   display:block; padding:.875rem 1rem; margin:.25rem 0;
@@ -181,7 +286,7 @@
       <a class="hover:text-brutalist-orange text-white/90" href="#about">Sobre</a>
       <a class="hover:text-brutalist-orange text-white/90" href="#format">Formato</a>
       <a class="hover:text-brutalist-orange text-white/90" href="#prices">Precios</a>
-      <a class="hover:text-brutalist-orange text-white/90" href="#registration">Registro</a>
+      <a class="hover:text-brutalist-orange text-white/90" href="#form">Inscripción</a>
       <a class="hover:text-brutalist-orange text-white/90" href="#gallery">Galería</a>
       <a class="hover:text-brutalist-orange text-white/90" href="#faq">FAQ</a>
     </nav>
@@ -207,7 +312,7 @@
       <a class="mobile-link" href="#about">Sobre</a>
       <a class="mobile-link" href="#format">Formato</a>
       <a class="mobile-link" href="#prices">Precios</a>
-      <a class="mobile-link" href="#registration">Registro</a>
+      <a class="mobile-link" href="#form">Inscripción</a>
       <a class="mobile-link" href="#gallery">Galería</a>
       <a class="mobile-link" href="#faq">FAQ</a>
     </nav>
@@ -241,7 +346,7 @@
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-        <a href="#registration"
+        <a href="#form"
            class="bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-bold text-lg px-8 py-6 uppercase tracking-wider border-4 border-black transition-transform hover:scale-105">
           Inscribirme
         </a>
@@ -392,7 +497,7 @@
           </div>
 
           <div class="relative mt-8 border-4 border-white bg-brutalist-gray p-6">
-            <img src="assets/img/mockupCamisola.jpg" alt="Camisola oficial" class="w-full h-auto">
+            <img src="assets/img/CamisolaBatalla.jpg" alt="Camisola oficial" class="w-full h-auto">
             <div class="absolute bottom-8 left-8 bg-brutalist-orange text-black px-4 py-2 font-display text-xl font-bold">EDICIÓN 2025</div>
           </div>
         </div>
@@ -433,35 +538,214 @@
 </section>
 
 
-    <!-- <RegistrationSection /> -->
-    <section id="registration" class="relative py-20 md:py-32 bg-black overflow-hidden">
-  <!-- Asphalt texture -->
+    <!-- <FormSection /> -->
+    <section id="form" class="relative py-20 md:py-32 bg-black overflow-hidden">
+  <!-- Concrete texture -->
   <div class="absolute inset-0 opacity-10"
        style="background-image:url('assets/img/dark-asphalt-texture.png');background-size:cover;"></div>
 
-  <div class="relative container mx-auto px-4 text-center">
-    <div class="max-w-4xl mx-auto space-y-8">
-      <!-- Date and location -->
-      <div class="space-y-4">
-        <div class="inline-block bg-brutalist-orange text-black px-6 py-3 font-display text-2xl md:text-3xl font-bold transform -rotate-2">
-          DICIEMBRE 2025
-        </div>
-        <p class="text-xl md:text-2xl text-white font-bold">CIUDAD DE GUATEMALA</p>
-      </div>
 
-      <!-- Main CTA -->
-      <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-        CUPOS<br><span class="text-brutalist-orange">LIMITADOS</span>
+  <div class="relative container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-4 text-white">
+        FORMULARIO DE <span class="text-brutalist-orange">INSCRIPCIÓN</span>
       </h2>
-      <p class="text-2xl md:text-3xl text-white/90 font-bold uppercase tracking-wide">Pre-registro abierto</p>
+      <p class="text-xl md:text-2xl text-center text-white/80 mb-12 font-bold uppercase tracking-wide">
+        Completa tus datos y adjunta tu boleta de pago
+      </p>
 
-      <!-- CTA Button -->
-      <div class="pt-8">
-        <a href="https://wa.me/50231072961?text=Quiero%20inscribirme%20a%20la%20Batalla%20de%20Porteros%202025"
-           class="inline-block bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-display text-2xl md:text-3xl px-12 py-8 uppercase tracking-wider border-8 border-white shadow-2xl transition-transform hover:scale-110 hover:rotate-2">
-          INSCRIBIRME AHORA
-        </a>
-      </div>
+      <!-- 
+        FORMULARIO CON FORMSPREE
+        Para configurar:
+        1. Ve a https://formspree.io/ y crea una cuenta gratuita
+        2. Crea un nuevo formulario y obtén tu ID
+        3. Reemplaza 'YOUR_FORMSPREE_ID' en js/main.js con tu ID real
+        4. El plan gratuito permite 50 envíos/mes
+        
+        Alternativas:
+        - EmailJS: https://www.emailjs.com/ (100 emails/mes gratis)
+        - Web3Forms: https://web3forms.com/ (250 envíos/mes gratis)
+        - Netlify Forms: Si migras a Netlify (100 envíos/mes gratis)
+      -->
+      <form 
+        id="registration-form" 
+        class="space-y-6 bg-black border-8 border-white p-8 md:p-12 relative overflow-hidden"
+        action="https://formspree.io/f/mjkjbkvn"
+        method="POST"
+      >
+        <!-- Decorative corner -->
+        <div class="absolute top-0 right-0 w-24 h-24 bg-brutalist-orange transform rotate-45 translate-x-12 -translate-y-12"></div>
+        
+        <div class="relative z-10 space-y-6">
+          <!-- Nombre -->
+          <div>
+            <label for="nombre" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
+              Nombre completo
+            </label>
+            <input 
+              type="text" 
+              id="nombre" 
+              name="nombre" 
+              required
+              class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
+              placeholder="Ingresa tu nombre completo"
+            >
+          </div>
+
+          <!-- Edad -->
+          <div>
+            <label for="edad" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
+              Edad
+            </label>
+            <input 
+              type="number" 
+              id="edad" 
+              name="edad" 
+              required
+              min="8"
+              class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
+              placeholder="Ingresa tu edad"
+            >
+          </div>
+
+          <!-- Talla de Camisola -->
+          <div>
+            <label for="talla" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
+              Talla de Camisola
+            </label>
+            <select 
+              id="talla" 
+              name="talla" 
+              required
+              class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
+            >
+              <option value="" disabled selected>Selecciona tu talla</option>
+              <option value="XS">XS - Extra Pequeña</option>
+              <option value="S">S - Pequeña</option>
+              <option value="M">M - Mediana</option>
+              <option value="L">L - Grande</option>
+              <option value="XL">XL - Extra Grande</option>
+              <option value="XXL">XXL - Extra Extra Grande</option>
+            </select>
+          </div>
+
+          <!-- Método de Pago -->
+          <div>
+            <label class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
+              Método de Pago
+            </label>
+            <div class="space-y-4">
+              <!-- Opción 1: Pago con tarjeta -->
+              <div class="bg-brutalist-gray border-4 border-white p-4 cursor-pointer hover:border-brutalist-orange transition-colors"
+                   onclick="selectPaymentMethod('card')">
+                <label class="flex items-center gap-4 cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="metodo-pago" 
+                    id="pago-tarjeta"
+                    value="tarjeta"
+                    class="w-6 h-6 text-brutalist-orange focus:ring-brutalist-orange focus:ring-2 cursor-pointer"
+                    onchange="togglePaymentMethod('card')"
+                  >
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3">
+                      <i class="bi bi-credit-card text-2xl text-brutalist-orange"></i>
+                      <span class="text-white font-bold text-lg uppercase">Pago con Tarjeta</span>
+                    </div>
+                    <p class="text-white/70 text-sm mt-1">Paga directamente con tarjeta de crédito o débito</p>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Opción 2: Adjuntar boleta -->
+              <div class="bg-brutalist-gray border-4 border-white p-4 cursor-pointer hover:border-brutalist-orange transition-colors"
+                   onclick="selectPaymentMethod('boleta')">
+                <label class="flex items-center gap-4 cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="metodo-pago" 
+                    id="pago-boleta"
+                    value="boleta"
+                    checked
+                    class="w-6 h-6 text-brutalist-orange focus:ring-brutalist-orange focus:ring-2 cursor-pointer"
+                    onchange="togglePaymentMethod('boleta')"
+                  >
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3">
+                      <i class="bi bi-receipt text-2xl text-brutalist-orange"></i>
+                      <span class="text-white font-bold text-lg uppercase">Adjuntar Boleta de Pago de Q350</span>
+                    </div>
+                    <p class="text-white/70 text-sm mt-1">Sube una imagen de tu comprobante de pago</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pago con Tarjeta - Botón de enlace -->
+          <div id="pago-tarjeta-section" class="hidden">
+            <div class="bg-brutalist-orange border-4 border-white p-6 text-center">
+              <i class="bi bi-credit-card-2-front text-4xl text-black mb-3 block"></i>
+              <p class="text-black font-bold text-lg mb-4 uppercase">Paga de forma segura con tarjeta</p>
+              <a 
+                href="https://app.recurrente.com/s/la-atajada/inscripcion-batalla-de-porteros-2025-tpkvmu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-black hover:bg-black/90 text-brutalist-orange font-display text-xl px-10 py-4 uppercase tracking-wider border-4 border-white transition-transform hover:scale-105 hover:rotate-1"
+              >
+                Pagar Ahora
+              </a>
+              <p class="text-black/80 text-sm mt-4">Se abrirá en una nueva ventana</p>
+            </div>
+          </div>
+
+          <!-- Adjuntar Boleta - Campo de archivo -->
+          <div id="boleta-section">
+            <label for="boleta" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
+              Boleta de Pago
+            </label>
+            <div class="relative">
+              <input 
+                type="file" 
+                id="boleta" 
+                name="boleta" 
+                accept="image/*"
+                class="hidden"
+                onchange="handleFileSelect(this)"
+              >
+              <label 
+                for="boleta"
+                class="block w-full bg-brutalist-gray border-4 border-white text-white px-6 py-8 font-bold text-lg cursor-pointer hover:border-brutalist-orange transition-colors text-center"
+              >
+                <i class="bi bi-cloud-upload text-3xl mb-2 block text-brutalist-orange"></i>
+                <span id="file-label" class="block">Haz clic para subir la imagen de tu boleta</span>
+                <span class="text-sm text-white/60 block mt-2">PNG, JPG o JPEG (Máx. 5MB)</span>
+              </label>
+            </div>
+            <!-- Preview de imagen -->
+            <div id="image-preview" class="hidden mt-4 border-4 border-white p-4 bg-brutalist-gray">
+              <img id="preview-img" src="" alt="Vista previa" class="max-w-full h-auto mx-auto">
+              <button 
+                type="button"
+                onclick="removeImage()"
+                class="mt-4 w-full bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-bold px-6 py-3 uppercase tracking-wide border-4 border-black transition-transform hover:scale-105"
+              >
+                Eliminar imagen
+              </button>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-6">
+            <button 
+              type="submit"
+              class="w-full bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-display text-2xl md:text-3xl px-12 py-6 uppercase tracking-wider border-8 border-white shadow-2xl transition-transform hover:scale-105 hover:rotate-1"
+            >
+              Enviar inscripción
+            </button>
+          </div>
+        </div>
+      </form>
 
       <!-- Accent lines -->
       <div class="flex justify-center gap-4 pt-8">
@@ -472,6 +756,7 @@
     </div>
   </div>
 </section>
+
 
 
     <!-- <GallerySection /> -->
@@ -610,6 +895,40 @@
     <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain border-4 border-brutalist-orange">
   </div>
 </section>
+
+  <!-- Modal Brutalista para mensajes del formulario -->
+  <div id="form-modal" class="fixed inset-0 bg-black/90 z-[60] items-center justify-center p-4" style="display: none;">
+    <div class="relative max-w-2xl w-full">
+      <div id="modal-content" class="bg-black border-8 border-white p-8 md:p-12 relative overflow-hidden transform transition-all">
+        <!-- Decorative corners -->
+        <div class="absolute top-0 right-0 w-24 h-24 bg-brutalist-orange transform rotate-45 translate-x-12 -translate-y-12"></div>
+        <div class="absolute bottom-0 left-0 w-16 h-16 bg-brutalist-orange transform -rotate-45 -translate-x-8 translate-y-8"></div>
+        
+        <div class="relative z-10">
+          <!-- Icono y título -->
+          <div class="text-center mb-6">
+            <div id="modal-icon" class="text-6xl mb-4"></div>
+            <h3 id="modal-title" class="font-display text-3xl md:text-4xl font-bold text-white uppercase mb-4"></h3>
+          </div>
+          
+          <!-- Mensaje -->
+          <div class="bg-brutalist-gray border-4 border-white p-6 mb-6">
+            <p id="modal-message" class="text-white text-lg md:text-xl font-bold leading-relaxed text-center"></p>
+          </div>
+          
+          <!-- Botón de cerrar -->
+          <div class="text-center">
+            <button 
+              id="modal-close"
+              class="bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-display text-xl md:text-2xl px-10 py-4 uppercase tracking-wider border-4 border-black transition-transform hover:scale-105 hover:rotate-1"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
     <!-- <FAQSection /> -->
