@@ -154,3 +154,4 @@ El formulario ahora usa un modal personalizado en lugar de alerts. El modal:
 
 ¿Necesitas ayuda? Contacta al desarrollador o revisa la documentación oficial de cada servicio.
 
+

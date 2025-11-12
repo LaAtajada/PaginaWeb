@@ -305,11 +305,12 @@ function togglePaymentMethod(method) {
     const nombre = document.getElementById('nombre').value.trim();
     const edad = document.getElementById('edad').value;
     const talla = document.getElementById('talla').value;
+    const telefono = document.getElementById('telefono').value;
     const metodoPago = document.querySelector('input[name="metodo-pago"]:checked')?.value;
     const boleta = document.getElementById('boleta').files[0];
     const submitButton = form.querySelector('button[type="submit"]');
     
-    if (!nombre || !edad || !talla) {
+    if (!nombre || !edad || !talla || !telefono) {
       showModal('error', 'Campos incompletos', 'Por favor, completa todos los campos requeridos del formulario.');
       return;
     }
@@ -330,7 +331,7 @@ function togglePaymentMethod(method) {
       // Aquí puedes enviar también los datos básicos del formulario
       // aunque el pago se procese por separado
       try {
-        await submitFormData(nombre, edad, talla, metodoPago, null);
+        await submitFormData(nombre, edad, talla, telefono, metodoPago, null);
       } catch (error) {
         console.error('Error al enviar datos:', error);
       }
@@ -345,7 +346,7 @@ function togglePaymentMethod(method) {
         submitButton.textContent = 'Enviando...';
       }
       
-      await submitFormData(nombre, edad, talla, metodoPago, boleta);
+      await submitFormData(nombre, edad, talla, telefono, metodoPago, boleta);
       
       // Mostrar mensaje de éxito
       showModal('success', 
@@ -388,12 +389,13 @@ function togglePaymentMethod(method) {
   });
 
   // Función para enviar datos del formulario
-  async function submitFormData(nombre, edad, talla, metodoPago, boletaFile) {
+  async function submitFormData(nombre, edad, talla, telefono, metodoPago, boletaFile) {
     // Crear FormData
     const formData = new FormData();
     formData.append('nombre', nombre);
     formData.append('edad', edad);
     formData.append('talla', talla);
+    formData.append('telefono', telefono);
     formData.append('metodo-pago', metodoPago);
     
     if (boletaFile) {
