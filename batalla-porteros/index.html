@@ -595,16 +595,16 @@ input[type="radio"]:checked::after {
           <!-- Edad -->
           <div>
             <label for="edad" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
-              Edad
+              Edad (Unicamente cupos solo para categoria libre)
             </label>
             <input 
               type="number" 
               id="edad" 
               name="edad" 
               required
-              min="8"
+              min="15"
               class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
-              placeholder="Ingresa tu edad"
+              placeholder="Cupos solo para categoria libre 15 años en adelante"
             >
           </div>
 
@@ -620,11 +620,9 @@ input[type="radio"]:checked::after {
               class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
             >
               <option value="" disabled selected>Selecciona tu talla</option>
-              <option value="XS">XS - Extra Pequeña Niño/a (aprox. 7–10 años)</option>
-              <option value="S">S - Pequeña Juvenil (10–13 años)</option>
+              
               <option value="M">M - Mediana</option>
-              <option value="L">L - Grande</option>
-              <option value="XL">XL - Extra Grande</option>
+              
             </select>
           </div>
 
