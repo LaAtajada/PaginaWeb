@@ -544,220 +544,26 @@ input[type="radio"]:checked::after {
   <div class="absolute inset-0 opacity-10"
        style="background-image:url('assets/img/dark-asphalt-texture.png');background-size:cover;"></div>
 
-
   <div class="relative container mx-auto px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-4 text-white">
         FORMULARIO DE <span class="text-brutalist-orange">INSCRIPCIÓN</span>
       </h2>
       <p class="text-xl md:text-2xl text-center text-white/80 mb-12 font-bold uppercase tracking-wide">
-        Completa tus datos y adjunta tu boleta de pago. <br> Si tu pago es con tarjeta, recuerda completar este formulario para recopilar tus datos de manera correcta.
+        Las inscripciones para la Batalla de Porteros 2025 han finalizado.
       </p>
 
-      <!-- 
-        FORMULARIO CON FORMSPREE
-        Para configurar:
-        1. Ve a https://formspree.io/ y crea una cuenta gratuita
-        2. Crea un nuevo formulario y obtén tu ID
-        3. Reemplaza 'YOUR_FORMSPREE_ID' en js/main.js con tu ID real
-        4. El plan gratuito permite 50 envíos/mes
-        
-        Alternativas:
-        - EmailJS: https://www.emailjs.com/ (100 emails/mes gratis)
-        - Web3Forms: https://web3forms.com/ (250 envíos/mes gratis)
-        - Netlify Forms: Si migras a Netlify (100 envíos/mes gratis)
-      -->
-      <form 
-        id="registration-form" 
-        class="space-y-6 bg-black border-8 border-white p-8 md:p-12 relative overflow-hidden"
-        action="https://getform.io/f/axozmdwb"
-        method="POST"
-      >
-        <!-- Decorative corner -->
-        <div class="absolute top-0 right-0 w-24 h-24 bg-brutalist-orange transform rotate-45 translate-x-12 -translate-y-12"></div>
-        
-        <div class="relative z-10 space-y-6">
-          <!-- Nombre -->
-          <div>
-            <label for="nombre" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
-              Nombre completo
-            </label>
-            <input 
-              type="text" 
-              id="nombre" 
-              name="nombre" 
-              required
-              class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
-              placeholder="Ingresa tu nombre completo"
-            >
-          </div>
-
-          <!-- Edad -->
-          <div>
-            <label for="edad" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
-              Edad (Unicamente cupos solo para categoria libre)
-            </label>
-            <input 
-              type="number" 
-              id="edad" 
-              name="edad" 
-              required
-              min="15"
-              class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
-              placeholder="Cupos solo para categoria libre 15 años en adelante"
-            >
-          </div>
-
-          <!-- Talla de Camisola -->
-          <div>
-            <label for="talla" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
-              Talla de Camisola
-            </label>
-            <select 
-              id="talla" 
-              name="talla" 
-              required
-              class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
-            >
-              <option value="" disabled selected>Selecciona tu talla</option>
-              
-              <option value="M">M - Mediana</option>
-              
-            </select>
-          </div>
-
-          <!-- Edad -->
-          <div>
-            <label for="telefono" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
-              Telefono
-            </label>
-            <input 
-              type="number" 
-              id="telefono" 
-              name="telefono" 
-              required
-              class="w-full bg-brutalist-gray border-4 border-white text-white px-6 py-4 font-bold text-lg focus:border-brutalist-orange focus:outline-none transition-colors"
-              placeholder="Ingresa tu telefono de contacto"
-            >
-          </div>
-
-          <!-- Método de Pago -->
-          <div>
-            <label class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
-              Método de Pago
-            </label>
-            <div class="space-y-4">
-              <!-- Opción 1: Pago con tarjeta -->
-              <div class="bg-brutalist-gray border-4 border-white p-4 cursor-pointer hover:border-brutalist-orange transition-colors"
-                   onclick="selectPaymentMethod('card')">
-                <label class="flex items-center gap-4 cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="metodo-pago" 
-                    id="pago-tarjeta"
-                    value="tarjeta"
-                    class="w-6 h-6 text-brutalist-orange focus:ring-brutalist-orange focus:ring-2 cursor-pointer"
-                    onchange="togglePaymentMethod('card')"
-                  >
-                  <div class="flex-1">
-                    <div class="flex items-center gap-3">
-                      <i class="bi bi-credit-card text-2xl text-brutalist-orange"></i>
-                      <span class="text-white font-bold text-lg uppercase">Pago con Tarjeta</span>
-                    </div>
-                    <p class="text-white/70 text-sm mt-1">Paga directamente con tarjeta de crédito o débito</p>
-                  </div>
-                </label>
-              </div>
-
-              <!-- Opción 2: Adjuntar boleta -->
-              <div class="bg-brutalist-gray border-4 border-white p-4 cursor-pointer hover:border-brutalist-orange transition-colors"
-                   onclick="selectPaymentMethod('boleta')">
-                <label class="flex items-center gap-4 cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="metodo-pago" 
-                    id="pago-boleta"
-                    value="boleta"
-                    checked
-                    class="w-6 h-6 text-brutalist-orange focus:ring-brutalist-orange focus:ring-2 cursor-pointer"
-                    onchange="togglePaymentMethod('boleta')"
-                  >
-                  <div class="flex-1">
-                    <div class="flex items-center gap-3">
-                      <i class="bi bi-receipt text-2xl text-brutalist-orange"></i>
-                      <span class="text-white font-bold text-lg uppercase">Transferencia a la cuenta de ahorro Banrural No.4714058484</span>
-                    </div>
-                    <p class="text-white/70 text-sm mt-1">Sube una imagen de tu comprobante de pago de Q350.00 a la cuenta de ahorro BANRURAL No.4714058484 </p>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pago con Tarjeta - Botón de enlace -->
-          <div id="pago-tarjeta-section" class="hidden">
-            <div class="bg-brutalist-orange border-4 border-white p-6 text-center">
-              <i class="bi bi-credit-card-2-front text-4xl text-black mb-3 block"></i>
-              <p class="text-black font-bold text-lg mb-4 uppercase">Paga de forma segura con tarjeta</p>
-              <a 
-                href="https://app.recurrente.com/s/la-atajada/inscripcion-batalla-de-porteros-2025-tpkvmu"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block bg-black hover:bg-black/90 text-brutalist-orange font-display text-xl px-10 py-4 uppercase tracking-wider border-4 border-white transition-transform hover:scale-105 hover:rotate-1"
-              >
-                Pagar Ahora
-              </a>
-              <p class="text-black/80 text-sm mt-4">Se abrirá en una nueva ventana, recuerda enviar este el formulario.</p>
-            </div>
-          </div>
-
-          <!-- Adjuntar Boleta - Campo de archivo -->
-          <div id="boleta-section">
-            <label for="boleta" class="block text-white font-bold text-lg mb-3 uppercase tracking-wide">
-              Boleta de Pago
-            </label>
-            <div class="relative">
-              <input 
-                type="file" 
-                id="boleta" 
-                name="boleta" 
-                accept="image/*"
-                class="hidden"
-                onchange="handleFileSelect(this)"
-              >
-              <label 
-                for="boleta"
-                class="block w-full bg-brutalist-gray border-4 border-white text-white px-6 py-8 font-bold text-lg cursor-pointer hover:border-brutalist-orange transition-colors text-center"
-              >
-                <i class="bi bi-cloud-upload text-3xl mb-2 block text-brutalist-orange"></i>
-                <span id="file-label" class="block">Haz clic para subir la imagen de tu boleta</span>
-                <span class="text-sm text-white/60 block mt-2">PNG, JPG o JPEG (Máx. 5MB)</span>
-              </label>
-            </div>
-            <!-- Preview de imagen -->
-            <div id="image-preview" class="hidden mt-4 border-4 border-white p-4 bg-brutalist-gray">
-              <img id="preview-img" src="" alt="Vista previa" class="max-w-full h-auto mx-auto">
-              <button 
-                type="button"
-                onclick="removeImage()"
-                class="mt-4 w-full bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-bold px-6 py-3 uppercase tracking-wide border-4 border-black transition-transform hover:scale-105"
-              >
-                Eliminar imagen
-              </button>
-            </div>
-          </div>
-
-          <!-- Submit Button -->
-          <div class="pt-6">
-            <button 
-              type="submit"
-              class="w-full bg-brutalist-orange hover:bg-brutalist-orange/90 text-black font-display text-2xl md:text-3xl px-12 py-6 uppercase tracking-wider border-8 border-white shadow-2xl transition-transform hover:scale-105 hover:rotate-1"
-            >
-              Enviar inscripción
-            </button>
-          </div>
+      <!-- AQUÍ ANTES IBA EL FORMULARIO -->
+      <div class="mt-4">
+        <div class="bg-brutalist-orange text-black text-center font-display font-bold 
+                    text-3xl md:text-4xl py-6 rounded-lg shadow-lg uppercase tracking-[0.25em]">
+          CUPOS LLENOS
         </div>
-      </form>
+        <p class="text-center text-white/70 mt-4 text-sm md:text-base uppercase tracking-wide">
+          Gracias por tu interés. Ya no estamos aceptando nuevas inscripciones. Nos vemos el viernes.
+        </p>
+      </div>
+      <!-- FIN DE LA TIRA -->
 
       <!-- Accent lines -->
       <div class="flex justify-center gap-4 pt-8">
@@ -768,6 +574,7 @@ input[type="radio"]:checked::after {
     </div>
   </div>
 </section>
+
 
 
 
