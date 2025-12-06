@@ -107,7 +107,7 @@ body::after {
   border-radius: var(--radius-none);
   border: 2px solid var(--border);
   background-color: var(--bg);
-  font-size: 10px;
+  font-size: 8px;
   letter-spacing: 0.15em;
   color: var(--text);
 }
@@ -123,7 +123,7 @@ body::after {
 /* Títulos grandes brutales */
 .title {
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: 26px;
   line-height: 1;
   letter-spacing: 0.08em;
   margin: 0 0 6px 0;
@@ -515,13 +515,13 @@ body::after {
 
 /* solo cambiamos el COLOR del texto/borde para distinguirlos */
 .br-campeon {
-  font-size: 24px;
+  font-size: 16px;
   color: #f39c1f;                      /* dorado */
   border-color: #facc15;
 }
 
 .br-subcampeon {
-  font-size: 18px;
+  font-size: 12px;
   color: #e5e7eb;                      /* plateado */
   border-color: #e5e7eb;
 }
