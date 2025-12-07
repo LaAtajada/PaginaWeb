@@ -526,3 +526,80 @@ body::after {
   border-color: #e5e7eb;
 }
 
+
+/* HERO brutalista */
+.hero-brutal {
+  border: 3px solid var(--border);
+  background-color: var(--bg-alt);
+  padding: 30px 16px;
+  margin-bottom: 24px;
+  box-shadow: 6px 6px 0 #ffffff;
+}
+
+.hero-inner {
+  max-width: 680px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 64px;
+  }
+}
+
+.hero-text {
+  font-size: 14px;
+  max-width: 520px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  padding: 14px 28px;
+  font-size: 14px;
+}
+
+/* SUMMARY */
+.summary-card {
+  border: 3px solid var(--border);
+  background-color: #000;
+  padding: 18px 14px;
+  margin-bottom: 26px;
+  box-shadow: 6px 6px 0 #ffffff;
+}
+
+.summary-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin-bottom: 12px;
+  letter-spacing: 0.14em;
+}
+
+.summary-text {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+/* CTA FINAL */
+.cta-final {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-xl {
+  padding: 16px 34px;
+  font-size: 16px;
+  letter-spacing: 0.20em;
+}
+
+
