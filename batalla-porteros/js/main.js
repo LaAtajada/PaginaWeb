@@ -289,8 +289,8 @@ function togglePaymentMethod(method) {
 
   // OPCIÓN 1: Formspree (Recomendado para GitHub Pages)
   // Reemplaza 'YOUR_FORMSPREE_ID' con tu ID de Formspree
-  // Para obtenerlo: https://formspree.io/ - Registrate gratis y crea un formulario
-  const FORMPREE_ENDPOINT = 'https://getform.io/f/axozmdwb';
+  // Para obtenerlo: https://forminit.com/ - Registrate gratis y crea un formulario
+  const FORMPREE_ENDPOINT = 'https://forminit.com/f/bxozqmka';
   
   // OPCIÓN 2: EmailJS (Alternativa)
   // Descomenta si prefieres usar EmailJS en lugar de Formspree
